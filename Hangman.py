@@ -19,7 +19,7 @@ def pregame(word):
     
     chances = 6        # Number of incorrect choices allowed
     
-    # How much char's are left to fill, & undescores of len(word) is result
+    # How much char's are left to fill, & underscores of len(word) is result
     leftToFill = len(word)
     result = ['_'] * len(word)
     
@@ -106,7 +106,7 @@ def start(res, word, leftToFill, charUsed, incorrect, c):
         answer = str(input(f'Play again? y/yes OR n/no \n'))
         answer = answer.lower()
         
-        retry(word, answer)
+        retry(answer)
         
     # Else if game is lost
     elif c == 0:
@@ -114,7 +114,7 @@ def start(res, word, leftToFill, charUsed, incorrect, c):
         answer = str(input(f'Retry game? y/yes OR n/no \n'))
         answer = answer.lower()
         
-        retry(word, answer)
+        retry(answer)
     
     start(res, word, leftToFill, charUsed, incorrect, c)
     
@@ -171,7 +171,7 @@ def drawMan(c):
     / \    |
        ____|____ ''')
     
-def retry(word, answer):
+def retry(answer):
     ''' Allows player to play another game if won or lost. '''
     
     if answer == 'y' or answer == 'yes':
@@ -184,7 +184,7 @@ def retry(word, answer):
     else:
         answer = str(input('\nIncorrect input. Type either: y, yes, or n, no.\n'))
         answer = answer.lower()
-        retry(word, answer)
+        retry(answer)
 
 def main():
     ''' Prints welcome message and begins game of Hangman. '''
